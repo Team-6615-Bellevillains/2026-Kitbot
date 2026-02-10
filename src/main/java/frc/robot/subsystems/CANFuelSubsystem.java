@@ -19,21 +19,6 @@ public class CANFuelSubsystem extends SubsystemBase {
     // create brushed motors for each of the motors on the launcher mechanism
     intakeLauncherRoller = new WPI_TalonSRX(INTAKE_LAUNCHER_MOTOR_ID);
     feederRoller = new WPI_TalonSRX(FEEDER_MOTOR_ID);
-    feederRoller.setInverted(true);
-
-    // create the configuration for the feeder roller, set a current limit and apply
-    // the config to the controller
-    //SparkMaxConfig feederConfig = new SparkMaxConfig();
-    //feederConfig.smartCurrentLimit(FEEDER_MOTOR_CURRENT_LIMIT);
-    //feederRoller.configure(feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-
-    // create the configuration for the launcher roller, set a current limit, set
-    // the motor to inverted so that positive values are used for both intaking and
-    // launching, and apply the config to the controller
-    //SparkMaxConfig launcherConfig = new SparkMaxConfig();
-    //launcherConfig.inverted(true);
-    //launcherConfig.smartCurrentLimit(LAUNCHER_MOTOR_CURRENT_LIMIT);
-    //intakeLauncherRoller.configure(launcherConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     // put default values for various fuel operations onto the dashboard
     // all commands using this subsystem pull values from the dashbaord to allow
