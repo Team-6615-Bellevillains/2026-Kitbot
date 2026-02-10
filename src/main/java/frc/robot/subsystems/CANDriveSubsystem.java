@@ -20,7 +20,7 @@ public class CANDriveSubsystem extends SubsystemBase {
     // create brushed motors for drive
     leftLeader = new WPI_TalonSRX(LEFT_LEADER_ID);
     rightLeader = new WPI_TalonSRX(RIGHT_LEADER_ID);
-  
+  rightLeader.setInverted(true);
     // set up differential drive class
     drive = new DifferentialDrive(leftLeader, rightLeader);
 
