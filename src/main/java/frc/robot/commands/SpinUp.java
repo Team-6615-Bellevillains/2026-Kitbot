@@ -9,15 +9,21 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.CANFuelSubsystem;
 import static frc.robot.Constants.FuelConstants.*;
 
+
+
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class SpinUp extends Command {
+
+double voltage;
+
   /** Creates a new Intake. */
 
   CANFuelSubsystem fuelSubsystem;
 
-  public SpinUp(CANFuelSubsystem fuelSystem) {
+  public SpinUp(CANFuelSubsystem fuelSystem, double voltage) {
     addRequirements(fuelSystem);
     this.fuelSubsystem = fuelSystem;
+    this.voltage = voltage;
   }
 
   // Called when the command is initially scheduled. Set the rollers to the
@@ -26,7 +32,7 @@ public class SpinUp extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", LAUNCHING_LAUNCHER_VOLTAGE));
+            SmartDashboard.getNumber("Launching launcher roller value", voltage));
     fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching spin-up feeder value", SPIN_UP_FEEDER_VOLTAGE));
   }
 

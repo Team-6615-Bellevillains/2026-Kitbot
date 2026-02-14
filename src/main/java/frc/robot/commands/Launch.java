@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.units.measure.Voltage;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.CANFuelSubsystem;
@@ -13,11 +14,14 @@ import static frc.robot.Constants.FuelConstants.*;
 public class Launch extends Command {
   /** Creates a new Intake. */
 
+  double voltage;
+
   CANFuelSubsystem fuelSubsystem;
 
-  public Launch(CANFuelSubsystem fuelSystem) {
+  public Launch(CANFuelSubsystem fuelSystem, double voltage) {
     addRequirements(fuelSystem);
     this.fuelSubsystem = fuelSystem;
+    this.voltage = voltage;
   }
 
   // Called when the command is initially scheduled. Set the rollers to the
@@ -26,7 +30,7 @@ public class Launch extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", LAUNCHING_LAUNCHER_VOLTAGE));
+            SmartDashboard.getNumber("Launching launcher roller value", voltage));
     fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching feeder roller value", LAUNCHING_FEEDER_VOLTAGE));
   }
 
