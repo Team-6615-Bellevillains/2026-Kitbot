@@ -14,14 +14,14 @@ import static frc.robot.Constants.FuelConstants.*;
 public class Launch extends Command {
   /** Creates a new Intake. */
 
-  double voltage;
+  double launchingLauncherVoltage;
 
   CANFuelSubsystem fuelSubsystem;
 
-  public Launch(CANFuelSubsystem fuelSystem, double voltage) {
+  public Launch(CANFuelSubsystem fuelSystem, double launchingLauncherVoltage) {
     addRequirements(fuelSystem);
     this.fuelSubsystem = fuelSystem;
-    this.voltage = voltage;
+    this.launchingLauncherVoltage = launchingLauncherVoltage;
   }
 
   // Called when the command is initially scheduled. Set the rollers to the
@@ -30,8 +30,8 @@ public class Launch extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", voltage));
-    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching feeder roller value", LAUNCHING_FEEDER_VOLTAGE));
+            SmartDashboard.getNumber("Launching launcher roller value", launchingLauncherVoltage));
+    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching feeder roller value", launchingLauncherVoltage+1));
   }
 
   // Called every time the scheduler runs while the command is scheduled. This

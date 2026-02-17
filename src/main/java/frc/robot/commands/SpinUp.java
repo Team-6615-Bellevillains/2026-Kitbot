@@ -8,22 +8,23 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.CANFuelSubsystem;
 import static frc.robot.Constants.FuelConstants.*;
+import frc.robot.commands.LaunchSequence;
 
 
 
 /* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
 public class SpinUp extends Command {
 
-double voltage;
+double launchingLauncherVoltage;
 
   /** Creates a new Intake. */
 
   CANFuelSubsystem fuelSubsystem;
 
-  public SpinUp(CANFuelSubsystem fuelSystem, double voltage) {
+  public SpinUp(CANFuelSubsystem fuelSystem, double launchingLauncherVoltage) {
     addRequirements(fuelSystem);
     this.fuelSubsystem = fuelSystem;
-    this.voltage = voltage;
+    this.launchingLauncherVoltage = launchingLauncherVoltage;
   }
 
   // Called when the command is initially scheduled. Set the rollers to the
@@ -32,8 +33,8 @@ double voltage;
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", voltage));
-    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching spin-up feeder value", SPIN_UP_FEEDER_VOLTAGE));
+            SmartDashboard.getNumber("Launching launcher roller value", launchingLauncherVoltage));
+    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching spin-up feeder value", (launchingLauncherVoltage-4)*-1));
   }
 
   // Called every time the scheduler runs while the command is scheduled. This

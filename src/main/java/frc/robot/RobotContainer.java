@@ -78,9 +78,9 @@ public class RobotContainer {
     // While the A button is held on the operator controller, eject fuel back out
     // the intake
     // i set this one to minus nine to be able to test if setting it there will affect it when actally doing it
-    operatorController.a().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE-9));
+    operatorController.a().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE-2.0));
     operatorController.b().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE));
-    operatorController.y().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE+2));
+    operatorController.y().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE+2.0));
     // Set the default command for the drive subsystem to the command provided by
     // factory with the values provided by the joystick axes on the driver
     // controller. The Y axis of the controller is inverted so that pushing the
