@@ -29,10 +29,9 @@ public class Launch extends Command {
   @Override
   public void initialize() {
     fuelSubsystem
-        .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", launchingLauncherVoltage));
-    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching feeder roller value", launchingLauncherVoltage+1));
-  }
+        .setIntakeLauncherRoller( launchingLauncherVoltage);
+    fuelSubsystem.setFeederRoller(launchingLauncherVoltage);
+   }
 
   // Called every time the scheduler runs while the command is scheduled. This
   // command doesn't require updating any values while running

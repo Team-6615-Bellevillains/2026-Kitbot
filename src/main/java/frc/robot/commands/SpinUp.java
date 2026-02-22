@@ -32,9 +32,8 @@ double launchingLauncherVoltage;
   @Override
   public void initialize() {
     fuelSubsystem
-        .setIntakeLauncherRoller(
-            SmartDashboard.getNumber("Launching launcher roller value", launchingLauncherVoltage));
-    fuelSubsystem.setFeederRoller(SmartDashboard.getNumber("Launching spin-up feeder value", (launchingLauncherVoltage-4)*-1));
+        .setIntakeLauncherRoller(launchingLauncherVoltage);
+     fuelSubsystem.setFeederRoller((launchingLauncherVoltage-4)*-1);
   }
 
   // Called every time the scheduler runs while the command is scheduled. This

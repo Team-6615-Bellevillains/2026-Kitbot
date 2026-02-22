@@ -10,6 +10,9 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 import static frc.robot.Constants.FuelConstants.LAUNCHING_LAUNCHER_VOLTAGE;
+import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_A;
+import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_B;
+import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_Y;
 import static frc.robot.Constants.OperatorConstants.*;
 import frc.robot.commands.Drive;
 import frc.robot.commands.Eject;
@@ -78,9 +81,9 @@ public class RobotContainer {
     // While the A button is held on the operator controller, eject fuel back out
     // the intake
     // i set this one to minus nine to be able to test if setting it there will affect it when actally doing it
-    operatorController.a().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE-2.0));
-    operatorController.b().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE));
-    operatorController.y().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_LAUNCHER_VOLTAGE+2.0));
+    operatorController.a().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_VOLTAGE_A));
+    operatorController.b().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_VOLTAGE_B));
+    operatorController.y().whileTrue(new LaunchSequence(fuelSubsystem, LAUNCHING_VOLTAGE_Y));
     // Set the default command for the drive subsystem to the command provided by
     // factory with the values provided by the joystick axes on the driver
     // controller. The Y axis of the controller is inverted so that pushing the
