@@ -26,7 +26,7 @@ public class Launch extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller( launchingLauncherVoltage);
-    fuelSubsystem.setFeederRoller(launchingLauncherVoltage);
+    fuelSubsystem.setFeederRoller(launchingLauncherVoltage*-1);
    }
 
   // Called every time the scheduler runs while the command is scheduled. This
