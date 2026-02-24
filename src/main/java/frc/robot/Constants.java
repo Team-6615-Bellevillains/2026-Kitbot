@@ -43,9 +43,9 @@ public final class Constants {
     public static final double LAUNCHING_LAUNCHER_VOLTAGE = 9;
     public static final double SPIN_UP_FEEDER_VOLTAGE = -9;
     public static final double SPIN_UP_SECONDS = 1;
-    public static final double LAUNCHING_VOLTAGE_A = 8;
-    public static final double LAUNCHING_VOLTAGE_B = 10;
-    public static final double LAUNCHING_VOLTAGE_Y = 12;
+    public static final double LAUNCHING_VOLTAGE_A = 10;
+    public static final double LAUNCHING_VOLTAGE_B = 12;
+    public static final double LAUNCHING_VOLTAGE_Y = 14;
 
 
 
