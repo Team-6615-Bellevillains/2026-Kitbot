@@ -8,8 +8,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-
-import static frc.robot.Constants.FuelConstants.LAUNCHING_LAUNCHER_VOLTAGE;
 import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_A;
 import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_B;
 import static frc.robot.Constants.FuelConstants.LAUNCHING_VOLTAGE_Y;
