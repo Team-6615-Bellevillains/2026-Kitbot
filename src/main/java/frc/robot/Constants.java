@@ -40,7 +40,7 @@ public final class Constants {
     public static final double INTAKING_FEEDER_VOLTAGE = 24;
     public static final double INTAKING_INTAKE_VOLTAGE = 10;
     public static final double LAUNCHING_FEEDER_VOLTAGE = -12;
-    public static final double LAUNCHING_LAUNCHER_VOLTAGE = 9;
+    public static final double LAUNCHING_AUTO_VOLTAGE = 13;
     public static final double SPIN_UP_FEEDER_VOLTAGE = -9;
     public static final double SPIN_UP_SECONDS = 1;
     public static final double LAUNCHING_VOLTAGE_A = 10;
