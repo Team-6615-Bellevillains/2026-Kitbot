@@ -12,9 +12,9 @@ import frc.robot.subsystems.CANFuelSubsystem;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class Auto1 extends SequentialCommandGroup {
+public class Auto3 extends SequentialCommandGroup {
   /** Creates a new ExampleAuto. */
-  public Auto1(CANDriveSubsystem driveSubsystem, CANFuelSubsystem fuelSubsystem) {
+  public Auto3(CANDriveSubsystem driveSubsystem, CANFuelSubsystem fuelSubsystem) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
@@ -24,8 +24,8 @@ public class Auto1 extends SequentialCommandGroup {
     //new AutoDrive(driveSubsystem,0.5,  0.0).withTimeout(.25),
     // Spin up the launcher for 1 second and then launch balls for 9 seconds, for a
     // total of 10 seconds
-      new AutoDrive(driveSubsystem, -7,0).withTimeout(.50),
-      new AutoDrive(driveSubsystem, 7,0).withTimeout(.25),
+      new AutoDrive(driveSubsystem, 7,0).withTimeout(.50),
+      new AutoDrive(driveSubsystem, -7,0).withTimeout(.25),
       new Launch(fuelSubsystem, 11).withTimeout(7)
 
      /* new Launch(fuelSubsystem, LAUNCHING_AUTO_VOLTAGE).withTimeout(7),

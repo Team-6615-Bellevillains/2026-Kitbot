@@ -15,6 +15,8 @@ import static frc.robot.Constants.OperatorConstants.*;
 import frc.robot.commands.Drive;
 import frc.robot.commands.Eject;
 import frc.robot.commands.Auto1;
+import frc.robot.commands.Auto2;
+import frc.robot.commands.Auto3;
 import frc.robot.commands.Intake;
 import frc.robot.commands.LaunchSequence;
 import frc.robot.subsystems.CANDriveSubsystem;
@@ -55,7 +57,9 @@ public class RobotContainer {
     // Set the options to show up in the Dashboard for selecting auto modes. If you
     // add additional auto modes you can add additional lines here with
     // autoChooser.addOption
-    autoChooser.setDefaultOption("Autonomous", new Auto1(driveSubsystem, fuelSubsystem));
+    autoChooser.setDefaultOption("Auto1", new Auto1(driveSubsystem, fuelSubsystem));
+    autoChooser.addOption("Auto2", new Auto2(driveSubsystem, fuelSubsystem));
+    autoChooser.addOption("Auto3", new Auto3(driveSubsystem, fuelSubsystem));
   }
 
   /**
