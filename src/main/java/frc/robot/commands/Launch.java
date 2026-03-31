@@ -3,6 +3,8 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+import static frc.robot.Constants.FuelConstants.LAUNCHING_FEEDER_VOLTAGE;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.CANFuelSubsystem;
 
@@ -26,7 +28,7 @@ public class Launch extends Command {
   public void initialize() {
     fuelSubsystem
         .setIntakeLauncherRoller( launchingLauncherVoltage);
-    fuelSubsystem.setFeederRoller(launchingLauncherVoltage*-1);
+    fuelSubsystem.setFeederRoller(LAUNCHING_FEEDER_VOLTAGE);
    }
 
   // Called every time the scheduler runs while the command is scheduled. This
